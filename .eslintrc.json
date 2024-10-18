@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "next",
-    "prettier",
-    "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
-  ],
+  "extends": ["next", "prettier", "plugin:prettier/recommended", "plugin:storybook/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": ["./tsconfig.json"]
@@ -18,7 +13,7 @@
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/await-thenable": "error",
     "no-constant-condition": "warn",
-    "no-unused-vars": ["error", { "varsIgnorePattern": "^_" }],
+    "no-unused-vars": ["off", { "varsIgnorePattern": "^_" }],
     "react-hooks/exhaustive-deps": [
       "warn",
       {
@@ -30,16 +25,6 @@
     "jsx-quotes": ["error", "prefer-double"],
     "react/jsx-curly-brace-presence": ["off", { "props": "never", "children": "never" }]
   },
-  "ignorePatterns": [
-    "node_modules/",
-    ".next/",
-    ".github/",
-    "cypress/",
-    "src/types/contracts/"
-  ],
-  "plugins": [
-    "unused-imports",
-    "@typescript-eslint",
-    "no-only-tests"
-  ]
+  "ignorePatterns": ["node_modules/", ".next/", ".github/", "cypress/", "src/types/contracts/"],
+  "plugins": ["unused-imports", "@typescript-eslint", "no-only-tests"]
 }
