@@ -1,22 +1,15 @@
 diff --git a/node_modules/@safe-global/protocol-kit/dist/src/utils/eip-3770/config.js b/node_modules/@safe-global/protocol-kit/dist/src/utils/eip-3770/config.js
-index c22dc1e..88bfd14 100644
+index 00ae69d..e095f45 100644
 --- a/node_modules/@safe-global/protocol-kit/dist/src/utils/eip-3770/config.js
 +++ b/node_modules/@safe-global/protocol-kit/dist/src/utils/eip-3770/config.js
-@@ -30,7 +30,7 @@ exports.networks = [
+@@ -33,7 +33,9 @@ exports.networks = [
      { chainId: 63n, shortName: 'metc' },
      { chainId: 69n, shortName: 'okov' },
      { chainId: 71n, shortName: 'cfxtest' },
 -    { chainId: 81n, shortName: 'joc' },
 +    { chainId: 81n, shortName: 'sby' },
++    { chainId: 1261120n, shortName: 'azktn' },
++    { chainId: 6038361n, shortName: 'azkyt' },
      { chainId: 82n, shortName: 'meter' },
      { chainId: 83n, shortName: 'meter-test' },
      { chainId: 88n, shortName: 'tomo' },
-@@ -115,6 +115,8 @@ exports.networks = [
-     { chainId: 3636n, shortName: 'BTNX' },
-     { chainId: 3737n, shortName: 'csb' },
-     { chainId: 3776n, shortName: 'astrzk' },
-+    { chainId: 1261120n, shortName: 'azktn' },
-+    { chainId: 6038361n, shortName: 'azkyt' },
-     { chainId: 4002n, shortName: 'tftm' },
-     { chainId: 4078n, shortName: 'muster' },
-     { chainId: 4157n, shortName: 'crossfi-testnet' },
