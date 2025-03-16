@@ -80,8 +80,7 @@ const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
 
       <div className={classnames(css.element, css.logoMobile)}>
         <Link href={logoHref} passHref>
-          {isOfficialHost ? <SafeLogoMobile alt="Safe logo" /> : null}
-        </Link>
+         <SafeLogoMobile alt="Safe logo" /> 
       </div>
 
       <div className={classnames(css.element, css.hideMobile, css.logo)}>

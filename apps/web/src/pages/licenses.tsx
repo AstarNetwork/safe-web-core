@@ -707,15 +707,15 @@ const SafeLicenses = () => (
 )
 
 const Licenses: NextPage = () => {
-  const isOfficialHost = useIsOfficialHost()
-
   return (
     <>
       <Head>
         <title>{`${BRAND_NAME} – Licenses`}</title>
       </Head>
 
-      <main>{isOfficialHost && <SafeLicenses />}</main>
+      <main>
+        <SafeLicenses />
+      </main>
     </>
   )
 }

@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Typography } from '@mui/material'
 import Link from 'next/link'
 import MUILink from '@mui/material/Link'
-import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
 import { BRAND_NAME } from '@/config/constants'
 
 const SafeImprint = () => (
@@ -40,7 +39,7 @@ const SafeImprint = () => (
       <strong>Accountability for content</strong>
     </Typography>
     <Typography mb={2}>
-      The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents’
+      The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents'
       accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our
       own content on these web pages. In this context, please note that we are accordingly not obliged to monitor merely
       the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity.
@@ -70,15 +69,15 @@ const SafeImprint = () => (
 )
 
 const Imprint: NextPage = () => {
-  const isOfficialHost = useIsOfficialHost()
-
   return (
     <>
       <Head>
         <title>{`${BRAND_NAME} – Imprint`}</title>
       </Head>
 
-      <main>{isOfficialHost && <SafeImprint />}</main>
+      <main>
+        <SafeImprint />
+      </main>
     </>
   )
 }
