@@ -12,6 +12,7 @@ import MUILink from '@mui/material/Link'
 import { HELP_CENTER_URL, IS_DEV, IS_OFFICIAL_HOST } from '@/config/constants'
 import darkPalette from '@/components/theme/darkPalette'
 import ProtofireLogo from '@/public/images/protofire-logo.svg'
+import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
 
 const footerPages = [
   AppRoutes.welcome.index,

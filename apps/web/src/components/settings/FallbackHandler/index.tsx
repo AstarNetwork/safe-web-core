@@ -43,6 +43,7 @@ export const FallbackHandler = (): ReactElement | null => {
   const fallbackHandlerDeployments = useCompatibilityFallbackHandlerDeployments()
   const isOfficial = useIsOfficialFallbackHandler()
   const isTWAPFallbackHandler = useIsTWAPFallbackHandler()
+  const txBuilder = useTxBuilderApp()
 
   const supportsFallbackHandler = !!safe.version && semverSatisfies(safe.version, FALLBACK_HANDLER_VERSION)
 
