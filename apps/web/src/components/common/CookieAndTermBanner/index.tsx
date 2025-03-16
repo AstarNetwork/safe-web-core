@@ -47,7 +47,12 @@ export const CookieAndTermBanner = ({
   const dispatch = useAppDispatch()
   const cookies = useAppSelector(selectCookies)
 
-  const { register, watch, getValues, setValue } = useForm({
+  const {
+    register: _register,
+    watch: _watch,
+    getValues,
+    setValue,
+  } = useForm({
     defaultValues: {
       [CookieAndTermType.TERMS]: true,
       [CookieAndTermType.NECESSARY]: true,

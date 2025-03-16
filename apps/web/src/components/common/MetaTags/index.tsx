@@ -1,4 +1,4 @@
-import { BRAND_NAME, IS_PRODUCTION } from '@/config/constants'
+import { IS_PRODUCTION } from '@/config/constants'
 import { ContentSecurityPolicy, StrictTransportSecurity } from '@/config/securityHeaders'
 import lightPalette from '@/components/theme/lightPalette'
 import darkPalette from '@/components/theme/darkPalette'

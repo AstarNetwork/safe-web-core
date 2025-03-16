@@ -5,7 +5,7 @@ import type { ReactElement } from 'react'
 
 import EthHashInfo from '@/components/common/EthHashInfo'
 import useSafeInfo from '@/hooks/useSafeInfo'
-import { BRAND_NAME, HelpCenterArticle } from '@/config/constants'
+import { HelpCenterArticle } from '@/config/constants'
 import ExternalLink from '@/components/common/ExternalLink'
 import { useTxBuilderApp } from '@/hooks/safe-apps/useTxBuilderApp'
 import { useCompatibilityFallbackHandlerDeployments } from '@/hooks/useCompatibilityFallbackHandlerDeployments'
@@ -55,7 +55,7 @@ export const FallbackHandler = (): ReactElement | null => {
 
   const warning = !hasFallbackHandler ? (
     <>
-      The {'Astar Safe'} may not work correctly as no fallback handler is currently set.
+      The Astar Safe may not work correctly as no fallback handler is currently set.
       {txBuilder && (
         <>
           {' '}

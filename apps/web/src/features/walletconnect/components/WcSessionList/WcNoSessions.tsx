@@ -4,7 +4,7 @@ import useLocalStorage from '@/services/local-storage/useLocalStorage'
 import { Typography } from '@mui/material'
 import { useCallback, useEffect } from 'react'
 
-const SAMPLE_DAPPS = [
+const _SAMPLE_DAPPS = [
   { name: 'Zerion', icon: '/images/common/nft-zerion.svg', url: 'https://app.zerion.io/connect-wallet' },
   { name: 'Zapper', icon: '/images/common/nft-zapper.svg', url: 'https://zapper.xyz/' },
   { name: 'OpenSea', icon: '/images/common/nft-opensea.svg', url: 'https://opensea.io/' },

@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Typography, Table, TableBody, TableRow, TableCell, TableHead, TableContainer, Box } from '@mui/material'
 import ExternalLink from '@/components/common/ExternalLink'
 import Paper from '@mui/material/Paper'
-import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
 import { BRAND_NAME } from '@/config/constants'
 
 const SafeLicenses = () => (

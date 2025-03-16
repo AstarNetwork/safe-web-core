@@ -1,7 +1,6 @@
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import SvgIcon from '@mui/material/SvgIcon'
-import { DISCORD_URL } from '@/config/constants'
 import NetworkError from '@/public/images/apps/network-error.svg'
 
 import css from './styles.module.css'
