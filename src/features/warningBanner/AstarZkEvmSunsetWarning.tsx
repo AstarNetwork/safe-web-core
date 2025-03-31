@@ -12,13 +12,8 @@ export const AstarZkEvmSunsetWarning = () => {
   return (
     <ErrorMessage level="warning" title="Astar zkEVM Sunsetting & Migration Plan">
       <Typography display="inline" mr={1}>
-        Dear users, Support for Astar zkEVM will end soon. Please withdraw your funds before April 1st, 2025.
-      </Typography>
-      <Typography display="inline">
-        For more details about migration, please visit Astar Forum
-        <ExternalLink href="https://forum.astar.network/t/astar-zkevm-sunsetting-migration-plan/7780">
-          https://forum.astar.network/t/astar-zkevm-sunsetting-migration-plan/7780
-        </ExternalLink>
+        As of <ExternalLink href="https://x.com/AstarNetwork/status/1906658995538194650">March 31, 2025</ExternalLink>,
+        the Astar zkEVM has been officially deprecated and is no longer accessible to users or developers.
       </Typography>
     </ErrorMessage>
   )
