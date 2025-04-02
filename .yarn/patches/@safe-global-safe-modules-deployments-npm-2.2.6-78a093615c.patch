@@ -1,0 +1,28 @@
+diff --git a/dist/assets/allowance-module/v0.1.0/allowance-module.json b/dist/assets/allowance-module/v0.1.0/allowance-module.json
+index a4fe2e54016c024afb0f83648b1a68712659c94f..4d2b04bcdff43dfd72c0ab7b3666cacf1d5b10c8 100644
+--- a/dist/assets/allowance-module/v0.1.0/allowance-module.json
++++ b/dist/assets/allowance-module/v0.1.0/allowance-module.json
+@@ -12,6 +12,9 @@
+         "137": "0x1Fb403834C911eB98d56E74F5182b0d64C3b3b4D",
+         "246": "0xCFbFaC74C26F8647cBDb8c5caf80BB5b32E43134",
+         "8453": "0xCFbFaC74C26F8647cBDb8c5caf80BB5b32E43134",
++        "81111": "0x386bc7cD21514f978a802d0818eA652Ee9346dAA",
++        "336": "0x386bc7cD21514f978a802d0818eA652Ee9346dAA",
++        "592": "0x386bc7cD21514f978a802d0818eA652Ee9346dAA",
+         "42220": "0xCFbFaC74C26F8647cBDb8c5caf80BB5b32E43134",
+         "43114": "0x1Fb403834C911eB98d56E74F5182b0d64C3b3b4D",
+         "73799": "0xCFbFaC74C26F8647cBDb8c5caf80BB5b32E43134",
+diff --git a/dist/assets/allowance-module/v0.1.1/allowance-module.json b/dist/assets/allowance-module/v0.1.1/allowance-module.json
+index 1d0b1d6e973183621204b22f370151094f2e2b8c..78496b95b5aaf2b95f21d66291fe0a50d289560b 100644
+--- a/dist/assets/allowance-module/v0.1.1/allowance-module.json
++++ b/dist/assets/allowance-module/v0.1.1/allowance-module.json
+@@ -5,6 +5,9 @@
+     "networkAddresses": {
+         "100": "0xAA46724893dedD72658219405185Fb0Fc91e091C",
+         "130": "0xAA46724893dedD72658219405185Fb0Fc91e091C",
++        "81111": "0x386bc7cD21514f978a802d0818eA652Ee9346dAA",
++        "336": "0x386bc7cD21514f978a802d0818eA652Ee9346dAA",
++        "592": "0x386bc7cD21514f978a802d0818eA652Ee9346dAA",
+         "137": "0xAA46724893dedD72658219405185Fb0Fc91e091C"
+     },
+     "abi": [
