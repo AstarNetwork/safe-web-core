@@ -169,13 +169,13 @@ export const CookieAndTermBanner = ({
                 gap: 2,
               }}
             >
-              <Grid item>
+              {/* <Grid item>
                 <Typography>
                   <Button onClick={handleAccept} variant="text" size="small" color="inherit" disableElevation>
                     Save settings
                   </Button>
                 </Typography>
-              </Grid>
+              </Grid> */}
 
               <Grid item>
                 <Button onClick={handleAcceptAll} variant="contained" color="secondary" size="small" disableElevation>
