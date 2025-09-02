@@ -9774,7 +9774,6 @@ __metadata:
     remark-gfm: "npm:^4.0.0"
     remark-heading-id: "npm:^1.0.1"
     remark-mdx-frontmatter: "npm:^5.2.0"
-    safe-network-config: "git@github.com:protofire/safe-network-config.git#main"
     semver: "npm:^7.7.1"
     storybook: "npm:^8.3.4"
     ts-prune: "npm:^0.10.3"
@@ -31310,13 +31309,6 @@ __metadata:
   version: 5.1.2
   resolution: "safe-buffer@npm:5.1.2"
   checksum: 10/7eb5b48f2ed9a594a4795677d5a150faa7eb54483b2318b568dc0c4fc94092a6cce5be02c7288a0500a156282f5276d5688bce7259299568d1053b2150ef374a
-  languageName: node
-  linkType: hard
-
-"safe-network-config@git@github.com:protofire/safe-network-config.git#main":
-  version: 1.0.5
-  resolution: "safe-network-config@git@github.com:protofire/safe-network-config.git#commit=ae41f8780118f4bb9069ed686cb0fd1fa38a6371"
-  checksum: 10/afe4f919096ff60a18fabf699537a71fb76a625e4bb80a5c88b0c97cb3a709b3fc7fa39b432317cab3dc00e5b61d9d0665f00cb1e89f4f3c267e018d480f17cc
   languageName: node
   linkType: hard
 
