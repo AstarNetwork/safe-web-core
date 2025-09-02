@@ -4,6 +4,7 @@ import css from './styles.module.css'
 import CheckFilled from '@/public/images/common/check-filled.svg'
 
 import WelcomeLogin from './WelcomeLogin'
+import NETWORK_CONFIG from '@/config/networkConfig'
 
 const BulletListItem = ({ text }: { text: string }) => (
   <li>
@@ -43,7 +44,12 @@ const NewSafe = () => {
             flex: 1,
           }}
         >
-          <div className={css.content}>
+          <div
+            className={css.content}
+            style={{
+              background: `linear-gradient(-90deg, ${NETWORK_CONFIG.WELCOME_PALETTE ?? (NETWORK_CONFIG.IS_LICENSED ? '#10b8ff, #b2efff' : '')})`,
+            }}
+          >
             <Typography
               variant="h1"
               sx={{
@@ -68,7 +74,7 @@ const NewSafe = () => {
             <ul className={css.bulletList}>
               <BulletListItem text="Stealth security with multiple signers" />
               <BulletListItem text="Make it yours with modules and guards" />
-              <BulletListItem text="Access 130+ ecosystem apps" />
+              {/* <BulletListItem text="Access 130+ ecosystem apps" /> */}
             </ul>
           </div>
         </Grid>

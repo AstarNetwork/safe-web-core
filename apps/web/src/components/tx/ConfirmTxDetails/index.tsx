@@ -11,6 +11,7 @@ import Track from '@/components/common/Track'
 import { MODALS_EVENTS } from '@/services/analytics'
 import useWallet from '@/hooks/wallets/useWallet'
 import { isHardwareWallet, isLedgerLive } from '@/utils/wallets'
+import NETWORK_CONFIG from '@/config/networkConfig'
 
 const InfoSteps = [
   {
@@ -40,10 +41,15 @@ const InfoSteps = [
     label: 'Verify with external tools',
     description: (
       <Typography>
-        You can additionally cross-verify your transaction data in a third-party tool like{' '}
-        <Track {...MODALS_EVENTS.OPEN_SAFE_UTILS}>
-          <ExternalLink href="https://safeutils.openzeppelin.com/">Safe Utils</ExternalLink>
-        </Track>
+        You can additionally cross-verify your transaction data in a third-party tool
+        {NETWORK_CONFIG.SAFE_UTILS_SUPPORTED && (
+          <>
+            like{' '}
+            <Track {...MODALS_EVENTS.OPEN_SAFE_UTILS}>
+              <ExternalLink href="https://safeutils.openzeppelin.com/">Safe Utils</ExternalLink>
+            </Track>
+          </>
+        )}
         .
       </Typography>
     ),

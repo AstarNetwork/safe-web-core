@@ -24,6 +24,7 @@ import { useAppSelector } from '@/store'
 import { selectChainById } from '@/store/chainsSlice'
 import useWallet from '@/hooks/wallets/useWallet'
 import { getLatestSafeVersion } from '@safe-global/utils/utils/chains'
+import { getTermsLink, getPrivacyLink } from '@/utils/networkConfig'
 
 type SetNameStepForm = {
   name: string
@@ -100,6 +101,13 @@ function SetNameStep({
     setValue(SetNameStepFields.safeVersion, getLatestSafeVersion(currentChain))
   }, [currentChain, setValue])
 
+  // Get terms and privacy links from template config or fallback to default routes
+  const getHref = (path: string): string => {
+    return router.pathname === path ? '' : path
+  }
+  const termsLink = getTermsLink(router.pathname, getHref)
+  const privacyLink = getPrivacyLink()
+
   const isDisabled = !isValid
 
   return (
@@ -141,13 +149,18 @@ function SetNameStep({
           </Grid>
           <Typography variant="body2" mt={2}>
             By continuing, you agree to our{' '}
-            <Link href={AppRoutes.terms} passHref legacyBehavior>
+            <Link href={termsLink} passHref legacyBehavior>
               <MUILink>terms of use</MUILink>
-            </Link>{' '}
-            and{' '}
-            <Link href={AppRoutes.privacy} passHref legacyBehavior>
-              <MUILink>privacy policy</MUILink>
             </Link>
+            {privacyLink && (
+              <>
+                {' '}
+                and{' '}
+                <Link href={privacyLink} passHref legacyBehavior>
+                  <MUILink>privacy policy</MUILink>
+                </Link>
+              </>
+            )}
             .
           </Typography>
 
