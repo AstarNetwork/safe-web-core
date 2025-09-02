@@ -12,6 +12,7 @@ import { TxFlowStep } from '@/components/tx-flow/TxFlowStep'
 import { Receipt } from '../ConfirmTxDetails/Receipt'
 import { Slot, SlotName } from '@/components/tx-flow/slots'
 import { Sign } from '@/components/tx-flow/actions/Sign'
+import NETWORK_CONFIG from '@/config/networkConfig'
 
 const InfoSteps = [
   {
@@ -41,10 +42,15 @@ const InfoSteps = [
     label: 'Verify with external tools',
     description: (
       <Typography>
-        You can additionally cross-verify your transaction data in a third-party tool like{' '}
-        <Track {...MODALS_EVENTS.OPEN_SAFE_UTILS}>
-          <ExternalLink href="https://safeutils.openzeppelin.com/">Safe Utils</ExternalLink>
-        </Track>
+        You can additionally cross-verify your transaction data in a third-party tool
+        {NETWORK_CONFIG.SAFE_UTILS_SUPPORTED && (
+          <>
+            like{' '}
+            <Track {...MODALS_EVENTS.OPEN_SAFE_UTILS}>
+              <ExternalLink href="https://safeutils.openzeppelin.com/">Safe Utils</ExternalLink>
+            </Track>
+          </>
+        )}
         .
       </Typography>
     ),

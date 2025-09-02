@@ -12,6 +12,13 @@ import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
 import { HELP_CENTER_URL } from '@safe-global/utils/config/constants'
 import { IS_PRODUCTION, COMMIT_HASH } from '@/config/constants'
 import type { FooterProps } from './footer.type'
+import { BRAND_NAME } from '@/config/constants'
+import ProtofireLogo from '@/public/images/protofire.svg'
+import darkPalette from '@/components/theme/darkPalette'
+import { PROTOFIRE_SUPPORT_LINK } from '@/config/constants.extra'
+import NETWORK_CONFIG from '@/config/networkConfig'
+import { findTemplateLink } from '@/utils/networkConfig'
+import DiscordIcon from '@/public/images/common/discord-icon.svg'
 
 const footerPages = [
   AppRoutes.settings.index,
@@ -90,9 +97,50 @@ const Footer: React.FC<FooterProps> = ({
             )}
           </>
         ) : (
-          <li>This is an unofficial distribution of the app</li>
-        )}
+          <>
+            <li>
+              <Typography variant="caption">
+                {NETWORK_CONFIG.IS_LICENSED
+                  ? 'This is a Safe{Wallet} Partner website'
+                  : '©' + new Date().getFullYear() + ' ' + BRAND_NAME}
+              </Typography>
+            </li>
 
+            {NETWORK_CONFIG.EXTRA_FOOTER_LINKS?.map((link, index) => {
+              return (
+                <li key={index}>
+                  <ExternalLink href={link.link} noIcon>
+                    {link.label.toLowerCase() === 'discord' && (
+                      <SvgIcon component={DiscordIcon} inheritViewBox fontSize="inherit" sx={{ mr: 0.5 }} />
+                    )}
+                    {link.label}
+                  </ExternalLink>
+                </li>
+              )
+            })}
+            {NETWORK_CONFIG.IS_LICENSED && (
+              <li>
+                <FooterLink href={getHref(AppRoutes.imprint)}>Imprint</FooterLink>
+              </li>
+            )}
+            <li>
+              <FooterLink href={getHref(AppRoutes.cookie)}>Cookie policy</FooterLink>
+            </li>
+            {!findTemplateLink('Terms') && (
+              <li>
+                <FooterLink href={getHref(AppRoutes.terms)}>Terms</FooterLink>
+              </li>
+            )}
+            <li>
+              <FooterLink href={getHref(AppRoutes.settings.index)}>Preferences</FooterLink>
+            </li>
+            <li>
+              <ExternalLink href={PROTOFIRE_SUPPORT_LINK} noIcon sx={{ span: { textDecoration: 'underline' } }}>
+                Help
+              </ExternalLink>
+            </li>
+          </>
+        )}
         <li>
           <ExternalLink href={`${APP_HOMEPAGE}/releases/tag/v${APP_VERSION}`} noIcon>
             {versionIcon && <SvgIcon component={GitHubIcon} inheritViewBox fontSize="inherit" sx={{ mr: 0.5 }} />}v
@@ -107,6 +155,20 @@ const Footer: React.FC<FooterProps> = ({
             </ExternalLink>
           </li>
         )}
+        <li>
+          <Typography variant="caption">
+            Supported by{' '}
+            <SvgIcon
+              component={ProtofireLogo}
+              inheritViewBox
+              fontSize="small"
+              sx={{ verticalAlign: 'middle', mx: 0.5 }}
+            />
+            <MUILink href="https://protofire.io" sx={{ color: darkPalette.primary.main, textDecoration: 'none' }}>
+              Protofire
+            </MUILink>
+          </Typography>
+        </li>
       </ul>
     </footer>
   )

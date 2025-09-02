@@ -1,5 +1,5 @@
 import { AppRoutes } from '@/config/routes'
-import { Paper, Typography, Divider, Box, Link, Button } from '@mui/material'
+import { Paper, Typography, Divider, Box, Link, Button, SvgIcon } from '@mui/material'
 import css from './styles.module.css'
 import { useRouter } from 'next/router'
 import { CREATE_SAFE_EVENTS } from '@/services/analytics/events/createLoadSafe'
@@ -9,6 +9,9 @@ import { useHasSafes } from '@/features/myAccounts'
 import Track from '@/components/common/Track'
 import { useCallback, useEffect, useState } from 'react'
 import WalletLogin from './WalletLogin'
+import NETWORK_CONFIG from '@/config/networkConfig'
+import LicensedLogo from '@/public/images/logo-licensed.svg'
+import SafeLogo from '@/public/images/logo-with-text.svg'
 
 const WelcomeLogin = () => {
   const router = useRouter()
@@ -39,7 +42,21 @@ const WelcomeLogin = () => {
   return (
     <Paper className={css.loginCard} data-testid="welcome-login" style={{ background: '#fff' }}>
       <Box className={css.loginContent}>
-        <Typography variant="h2" mt={6} fontWeight={700}>
+        {NETWORK_CONFIG.IS_LICENSED ? (
+          <SvgIcon component={LicensedLogo} inheritViewBox sx={{ height: '72px', width: '240px', ml: '-8px' }} />
+        ) : (
+          <SvgIcon
+            component={SafeLogo}
+            inheritViewBox
+            sx={{
+              height: NETWORK_CONFIG.LOGO_DIMENSIONS?.WELCOME?.H ?? '24px',
+              width: NETWORK_CONFIG.LOGO_DIMENSIONS?.WELCOME?.W ?? '80px',
+              ml: '-8px',
+            }}
+          />
+        )}
+
+        <Typography variant="h6" mt={6} fontWeight={700}>
           Get started
         </Typography>
 
