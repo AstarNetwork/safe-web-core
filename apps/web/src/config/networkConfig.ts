@@ -10,6 +10,10 @@ const NETWORK_CONFIG = {
     HEADER: {
       H: '30px',
     },
+    WELCOME: {
+      W: '149px',
+      H: '44px'
+    }
   },
 } as NetworkConfig
 export default NETWORK_CONFIG
