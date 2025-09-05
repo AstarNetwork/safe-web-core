@@ -12,8 +12,8 @@ const NETWORK_CONFIG = {
     },
     WELCOME: {
       W: '149px',
-      H: '44px'
-    }
+      H: '44px',
+    },
   },
 } as NetworkConfig
 export default NETWORK_CONFIG
