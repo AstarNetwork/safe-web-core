@@ -49,6 +49,7 @@ const GasMultipliers = {
   [chains.gno]: 1.3,
   [chains.zksync]: 20,
   [chains.sby]: 1.5,
+  [chains.sdn]: 1.5,
 }
 
 const incrementByGasMultiplier = (value: bigint, multiplier: number) => {
