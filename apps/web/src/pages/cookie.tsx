@@ -7,6 +7,8 @@ import SafeCookiePolicy from '@/markdown/cookie/cookie.md'
 import type { MDXComponents } from 'mdx/types'
 import CustomLink from '@/components/common/CustomLink'
 import { Table as MuiTable, TableHead, TableBody, TableRow, TableCell } from '@mui/material'
+import ReactMarkdown from 'react-markdown'
+import { Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { COOKIE_LINK } from '@/config/constants.extra'
 
@@ -30,6 +32,7 @@ const overrideComponents: MDXComponents = {
 const CookiePolicy: NextPage = () => {
   const isOfficialHost = useIsOfficialHost()
   const [content, setContent] = useState<string>('')
+
   useEffect(() => {
     const fetchContent = async () => {
       try {
@@ -41,9 +44,9 @@ const CookiePolicy: NextPage = () => {
         console.error('Error fetching cookie policy:', error)
       }
     }
-
     fetchContent()
   }, [])
+
   return (
     <>
       <Head>
@@ -51,7 +54,11 @@ const CookiePolicy: NextPage = () => {
       </Head>
 
       <main style={{ lineHeight: '1.5' }}>
-        {isOfficialHost && <SafeCookiePolicy components={overrideComponents} />}
+        {isOfficialHost ? (
+          <SafeCookiePolicy components={overrideComponents} />
+        ) : (
+          <>{content ? <ReactMarkdown>{content}</ReactMarkdown> : <Typography>Loading cookie policy...</Typography>}</>
+        )}
       </main>
     </>
   )

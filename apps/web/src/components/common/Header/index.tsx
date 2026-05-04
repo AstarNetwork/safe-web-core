@@ -25,7 +25,7 @@ import { useSafeTokenEnabled } from '@/hooks/useSafeTokenEnabled'
 import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
 import { BRAND_NAME } from '@/config/constants'
 import NETWORK_CONFIG from '@/config/networkConfig'
-import SafeLogo from '@/public/images/logo-with-text.svg'
+import SafeLogo from '@/public/images/logo.svg'
 
 type HeaderProps = {
   onMenuToggle?: Dispatch<SetStateAction<boolean>>

@@ -1,24 +1,24 @@
+import { SafeProvider } from '@safe-global/protocol-kit'
 import { useEffect } from 'react'
+import type Safe from '@safe-global/protocol-kit'
+import { encodeSignatures } from '@/services/tx/encodeSignatures'
 import type { SafeTransaction } from '@safe-global/types-kit'
 import useAsync from '@safe-global/utils/hooks/useAsync'
 import useChainId from '@/hooks/useChainId'
-import { useWeb3ReadOnly } from '@/hooks/wallets/web3ReadOnly'
+import { useWeb3ReadOnly } from '@/hooks/wallets/web3'
 import chains from '@/config/chains'
 import { useSigner } from './wallets/useWallet'
 import { useSafeSDK } from './coreSDK/safeCoreSDK'
 import useIsSafeOwner from './useIsSafeOwner'
 import { Errors, logError } from '@/services/exceptions'
 import useSafeInfo from './useSafeInfo'
+import { estimateTxBaseGas } from '@safe-global/protocol-kit/dist/src/utils/transactions/gas'
 import {
   getCompatibilityFallbackHandlerContract,
   getSimulateTxAccessorContract,
 } from '@safe-global/protocol-kit/dist/src/contracts/safeDeploymentContracts'
 import { type JsonRpcProvider } from 'ethers'
 import type { ExtendedSafeInfo } from '@safe-global/store/slices/SafeInfo/types'
-import type Safe from '@safe-global/protocol-kit'
-import { encodeSignatures } from '@safe-global/utils/services/encodeSignatures'
-import { SafeProvider } from '@safe-global/protocol-kit'
-import { estimateTxBaseGas } from '@safe-global/protocol-kit'
 
 const getEncodedSafeTx = (
   safeSDK: Safe,
@@ -164,12 +164,12 @@ const useGasLimit = (
     )
 
     // if we are dealing with zksync and the walletAddress is a Safe, we have to do some magic
-    // FIXME a new check to indicate ZKsync chain will be added to the config service and available under Chain
+    // FIXME a new check to indicate ZKsync chain will be added to the config service and available under ChainInfo
     if (
       (safe.chainId === chains.zksync || safe.chainId === chains.lens) &&
       (await web3ReadOnly.getCode(walletAddress)) !== '0x'
     ) {
-      return getGasLimitForZkSyncUtil(web3ReadOnly, safeSDK, safeTx, safe.chainId, safe.address.value)
+      return getGasLimitForZkSync(safe, web3ReadOnly, safeSDK, safeTx)
     }
 
     return web3ReadOnly

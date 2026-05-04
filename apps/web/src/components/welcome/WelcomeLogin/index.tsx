@@ -11,7 +11,7 @@ import { useCallback, useEffect, useState } from 'react'
 import WalletLogin from './WalletLogin'
 import NETWORK_CONFIG from '@/config/networkConfig'
 import LicensedLogo from '@/public/images/logo-licensed.svg'
-import SafeLogo from '@/public/images/logo-with-text.svg'
+import SafeLogo from '@/public/images/logo-text.svg'
 
 const WelcomeLogin = () => {
   const router = useRouter()

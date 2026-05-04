@@ -59,7 +59,7 @@ const EXPLORE_POSSIBLE_CONFIG = [
       light: '/images/explore-possible/spaces-large.svg',
       dark: '/images/explore-possible/spaces-large-dark.svg',
     },
-    getLink: () => 'https://app.safe.global/welcome/spaces',
+    getLink: () => `${typeof window !== 'undefined' ? window.location.origin : ''}/welcome/spaces`,
   },
   {
     id: 'transaction-builder',
