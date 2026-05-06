@@ -38,6 +38,8 @@
 
 .logo {
   color: #000;
+  height: 44px;
+  width: auto;
 }
 
 .rightContent {
