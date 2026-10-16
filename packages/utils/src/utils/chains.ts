@@ -55,7 +55,8 @@ export enum FEATURES {
   HYPERNATIVE_QUEUE_SCAN = 'HYPERNATIVE_QUEUE_SCAN',
   EURCV_BOOST = 'EURCV_BOOST',
   MY_ACCOUNTS = 'MY_ACCOUNTS',
-  NATIVE_SWAPS_LIFI = 'NATIVE_SWAPS_LIF'
+  NATIVE_SWAPS_LIFI = 'NATIVE_SWAPS_LIF',
+  DATA_MIGRATION_PROMO = 'DATA_MIGRATION_PROMO', // opt-in localStorage migration banner from dedicated deployments to the shared UI
 }
 
 const MIN_SAFE_VERSION = '1.3.0'

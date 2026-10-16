@@ -10,6 +10,14 @@ faker.seed(123)
 // Set timezone to UTC for consistent date formatting across environments
 process.env.TZ = 'UTC'
 
+// jsdom doesn't implement the Compression Streams API (unlike every evergreen browser
+// this app supports) - polyfill it from Node's own implementation for tests only.
+if (typeof CompressionStream === 'undefined' || typeof DecompressionStream === 'undefined') {
+  const { CompressionStream, DecompressionStream } = require('node:stream/web')
+  global.CompressionStream = CompressionStream
+  global.DecompressionStream = DecompressionStream
+}
+
 jest.mock('@web3-onboard/coinbase', () => jest.fn())
 jest.mock('@web3-onboard/injected-wallets', () => ({ ProviderLabel: { MetaMask: 'MetaMask' } }))
 jest.mock('@web3-onboard/walletconnect', () => jest.fn())

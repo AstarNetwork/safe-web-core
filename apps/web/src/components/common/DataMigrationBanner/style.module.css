@@ -1,0 +1,9 @@
+.wrapper {
+  padding: var(--space-3) var(--space-3) 0;
+}
+
+@media (max-width: 599.95px) {
+  .wrapper {
+    padding: var(--space-2) var(--space-2) 0;
+  }
+}
