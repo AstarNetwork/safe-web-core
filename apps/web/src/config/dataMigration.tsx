@@ -47,12 +47,11 @@ export const getSharedUiWelcomeUrl = (origin: string): string => `${origin}/welc
  * DATA_MIGRATION_PROMO feature flag in the chain config.
  */
 export const DATA_MIGRATION_BANNER = {
-  title: 'Try Protofire Multisig — your Safes are already there',
+  title: 'Astar Mainnet is moving to Protofire Multisig!',
   description: (sharedUiOrigin: string): ReactNode => (
     <>
-      Sync your address book, added Safes and settings to{' '}
-      <ExternalLink href={getSharedUiWelcomeUrl(sharedUiOrigin)}>Protofire Multisig</ExternalLink> in one click. Your
-      Safes and transaction history are already accessible there.
+      Get started at: <ExternalLink href={getSharedUiWelcomeUrl(sharedUiOrigin)}>Protofire Multisig</ExternalLink>{' '}
+      before November 5, 2026, when this interface will be discontinued.
     </>
   ),
 }
