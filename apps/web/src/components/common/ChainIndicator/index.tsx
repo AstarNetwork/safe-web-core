@@ -8,6 +8,12 @@ import FiatValue from '../FiatValue'
 import UnknownChainIcon from '@/public/images/common/unknown.svg'
 import useChains from '@/hooks/useChains'
 import { useChain } from '@/hooks/useChains'
+import type { Chain } from '@safe-global/store/gateway/AUTO_GENERATED/chains'
+
+type ChainLogoProps = {
+  chain: Pick<Chain, 'chainName' | 'chainLogoUri'>
+  size?: number
+}
 
 type ChainIndicatorProps = {
   chainId?: string
@@ -30,6 +36,29 @@ const fallbackChainConfig = {
   },
   chainLogoUri: null,
 }
+
+export const ChainLogo = ({ chain, size = 24 }: ChainLogoProps): ReactElement =>
+  chain.chainLogoUri ? (
+    <img
+      src={chain.chainLogoUri}
+      alt={`${chain.chainName} Logo`}
+      width={size}
+      height={size}
+      loading="lazy"
+      style={{ borderRadius: '50%' }}
+    />
+  ) : (
+    <SvgIcon
+      component={UnknownChainIcon}
+      inheritViewBox
+      sx={{
+        height: size,
+        width: size,
+        backgroundColor: (theme) => theme.palette.background.main,
+        borderRadius: '100%',
+      }}
+    />
+  )
 
 const ChainIndicator = ({
   chainId,
@@ -58,28 +87,6 @@ const ChainIndicator = ({
     }
   }, [chainConfig])
 
-  const logoComponent = chainConfig?.chainLogoUri ? (
-    <img
-      src={chainConfig.chainLogoUri ?? undefined}
-      alt={`${chainConfig.chainName} Logo`}
-      width={imageSize}
-      height={imageSize}
-      loading="lazy"
-      style={{ borderRadius: '50%' }}
-    />
-  ) : (
-    <SvgIcon
-      component={UnknownChainIcon}
-      inheritViewBox
-      sx={{
-        height: imageSize,
-        width: imageSize,
-        backgroundColor: (theme) => theme.palette.background.main,
-        borderRadius: '100%',
-      }}
-    />
-  )
-
   return noChains ? (
     <Skeleton width="100%" height="22px" variant="rectangular" sx={{ flexShrink: 0 }} />
   ) : chainConfig ? (
@@ -94,7 +101,7 @@ const ChainIndicator = ({
         [css.onlyLogo]: onlyLogo,
       })}
     >
-      {showLogo && logoComponent}
+      {showLogo && <ChainLogo chain={chainConfig} size={imageSize} />}
       {!onlyLogo && (
         <Stack>
           <span className={css.name}>{chainConfig.chainName}</span>

@@ -164,7 +164,7 @@ const Footer: React.FC<FooterProps> = ({
               fontSize="small"
               sx={{ verticalAlign: 'middle', mx: 0.5 }}
             />
-            <MUILink href="https://protofire.io" sx={{ color: darkPalette.primary.main, textDecoration: 'none' }}>
+            <MUILink href="https://safe.protofire.io" sx={{ color: darkPalette.primary.main, textDecoration: 'none' }}>
               Protofire
             </MUILink>
           </Typography>
