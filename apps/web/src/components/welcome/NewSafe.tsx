@@ -1,7 +1,7 @@
 import React from 'react'
-import { Typography } from '@mui/material'
 import css from './styles.module.css'
 import WelcomeLogin from './WelcomeLogin'
+import WelcomeRightPanel from './WelcomeRightPanel'
 import SafeLogo from '@/public/images/logo.svg'
 import footerCss from './welcomeFooter.module.css'
 import Footer from '../common/Footer'
@@ -20,13 +20,7 @@ const NewSafe = () => {
       </div>
 
       <div className={css.rightSide}>
-        <div className={css.rightContent}>
-          <Typography className={css.label}>FOR ORGANIZATIONS AND POWER USERS</Typography>
-          <Typography className={css.mainTitle}>Own your assets onchain securely</Typography>
-        </div>
-        <div className={css.mockupImageContainer}>
-          <img src="/images/welcome/safe-mockup.png" alt="Safe interface mockup" className={css.mockupImage} />
-        </div>
+        <WelcomeRightPanel />
       </div>
     </div>
   )

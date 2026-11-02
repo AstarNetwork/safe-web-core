@@ -29,7 +29,6 @@ describe('RefreshPositionsButton', () => {
 
     jest.spyOn(useRefetchBalances, 'useRefetchBalances').mockReturnValue({
       refetch: mockRefetch,
-      refetchPositions: mockRefetch,
       shouldUsePortfolioEndpoint: false,
       fulfilledTimeStamp: undefined,
       isFetching: false,
@@ -59,7 +58,6 @@ describe('RefreshPositionsButton', () => {
     it('should show portfolio tooltip when portfolio endpoint is enabled', async () => {
       jest.spyOn(useRefetchBalances, 'useRefetchBalances').mockReturnValue({
         refetch: mockRefetch,
-        refetchPositions: mockRefetch,
         shouldUsePortfolioEndpoint: true,
         fulfilledTimeStamp: undefined,
         isFetching: false,
